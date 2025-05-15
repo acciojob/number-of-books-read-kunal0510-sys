@@ -1,23 +1,27 @@
+// Sample library object
 const library = [
   {
-    author: "Bill Gates",
     title: "The Road Ahead",
-    readingStatus: true,
+    author: "Bill Gates",
+    readingStatus: true
   },
   {
-    author: "Steve Jobs",
     title: "Walter Isaacson",
-    readingStatus: true,
+    author: "Steve Jobs",
+    readingStatus: true
   },
   {
-    author: "Suzanne Collins",
     title: "Mockingjay: The Final Book of The Hunger Games",
-    readingStatus: false,
-  },
+    author: "Suzanne Collins",
+    readingStatus: false
+  }
 ];
 
-const numberOfBooksRead = () => {
-  // write your code here
-};
+// Function to count the number of books read
+function numberOfBooksRead() {
+  let count = 0;
 
-// Do not change the code below
+  for (let book of library) {
+    if (book.readingStatus) {
+      count++;
+    }
