@@ -1,27 +1,18 @@
 // Sample library object
 const library = [
-  {
-    title: "The Road Ahead",
-    author: "Bill Gates",
-    readingStatus: true
-  },
-  {
-    title: "Walter Isaacson",
-    author: "Steve Jobs",
-    readingStatus: true
-  },
-  {
-    title: "Mockingjay: The Final Book of The Hunger Games",
-    author: "Suzanne Collins",
-    readingStatus: false
-  }
+  { author: "Bill Gates", title: "The Road Ahead", readingStatus: true },
+  { author: "Steve Jobs", title: "Walter Isaacson", readingStatus: true },
+  { author: "Suzanne Collins", title: "Mockingjay", readingStatus: false }
 ];
 
-// Function to count the number of books read
+// Function to count number of books read
 function numberOfBooksRead() {
-  let count = 0;
+  return library.filter(book => book.readingStatus).length;
+}
 
-  for (let book of library) {
-    if (book.readingStatus) {
-      count++;
-    }
+// Display result when button is clicked
+function showNumberOfBooksRead() {
+  const resultDiv = document.getElementById("result");
+  const count = numberOfBooksRead();
+  resultDiv.textContent = 📚 You have read ${count} book(s).;
+}
